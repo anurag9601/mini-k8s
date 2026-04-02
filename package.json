@@ -7,8 +7,13 @@
     "dev": "tsc-watch --onSuccess \"node dist/root.js\"",
     "start": "node dist/root.js",
     "build": "tsc -p .",
+    
     "docker-up": "docker compose up",
-    "docker-down": "docker compose down"
+    "docker-down": "docker compose down",
+
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
   },
   "keywords": [],
   "author": "",
@@ -22,5 +27,10 @@
     "pg": "^8.20.0",
     "tsc-watch": "^7.2.0",
     "typescript": "^6.0.2"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.20.0",
+    "drizzle-kit": "^0.31.10",
+    "tsx": "^4.21.0"
   }
 }
