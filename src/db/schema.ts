@@ -4,11 +4,11 @@ import { pgEnum } from "drizzle-orm/pg-core";
 import { uuid, text } from "drizzle-orm/pg-core";
 import { pgTable } from "drizzle-orm/pg-core";
 
-const containerStatusEnum = pgEnum("job-status", [
+const containerStatusEnum = pgEnum("job_status", [
     "Pending",
     "Processing",
     "Running",
-    "Stoped",
+    "Stopped",
     "Failed"
 ])
 
@@ -17,6 +17,6 @@ export const containerTable = pgTable("containers", {
     image: text().notNull(),
     cmd: text().default(""),
     status: containerStatusEnum().default("Pending"),
-    createdAt: timestamp("created-at").defaultNow().notNull(),
-    updatedAt: timestamp("updated-at").$onUpdate(() => new Date()),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    updatedAt: timestamp("updated_at").$onUpdate(() => new Date()),
 });
