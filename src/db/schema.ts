@@ -12,6 +12,8 @@ const containerStatusEnum = pgEnum("job_status", [
     "Failed"
 ]);
 
+export const containerStausEnumValues = containerStatusEnum.enumValues;
+
 export const containerTable = pgTable("containers", {
     id: uuid().primaryKey().defaultRandom(),
     image: text().notNull(),

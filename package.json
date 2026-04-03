@@ -7,10 +7,8 @@
     "dev": "tsc-watch --onSuccess \"node dist/root.js\"",
     "start": "node dist/root.js",
     "build": "tsc -p .",
-    
     "docker-up": "docker compose up -d",
     "docker-down": "docker compose down",
-
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio"
@@ -21,6 +19,7 @@
   "packageManager": "pnpm@10.11.0",
   "dependencies": {
     "@types/express": "^5.0.6",
+    "bullmq": "^5.73.0",
     "dotenv": "^17.4.0",
     "drizzle-orm": "^0.45.2",
     "express": "^5.2.1",
