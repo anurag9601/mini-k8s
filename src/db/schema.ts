@@ -10,7 +10,7 @@ const containerStatusEnum = pgEnum("job_status", [
     "Running",
     "Stopped",
     "Failed"
-])
+]);
 
 export const containerTable = pgTable("containers", {
     id: uuid().primaryKey().defaultRandom(),
