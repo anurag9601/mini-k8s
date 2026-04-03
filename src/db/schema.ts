@@ -20,3 +20,5 @@ export const containerTable = pgTable("containers", {
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at").$onUpdate(() => new Date()),
 });
+
+export default containerTable;

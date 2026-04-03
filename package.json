@@ -8,7 +8,7 @@
     "start": "node dist/root.js",
     "build": "tsc -p .",
     
-    "docker-up": "docker compose up",
+    "docker-up": "docker compose up -d",
     "docker-down": "docker compose down",
 
     "db:generate": "drizzle-kit generate",
