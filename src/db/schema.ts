@@ -12,12 +12,13 @@ const containerStatusEnum = pgEnum("job_status", [
     "Failed"
 ]);
 
-export const containerStausEnumValues = containerStatusEnum.enumValues;
+export const containerStatusEnumValues = containerStatusEnum.enumValues;
 
 export const containerTable = pgTable("containers", {
     id: uuid().primaryKey().defaultRandom(),
     image: text().notNull(),
     cmd: text().default(""),
+    containerId: text().default(""),
     status: containerStatusEnum().default("Pending"),
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at").$onUpdate(() => new Date()),
