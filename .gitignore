@@ -4,3 +4,7 @@ dist
 
 postgres_data
 valkey_data
+
+.env
+
+drizzle

@@ -5,10 +5,15 @@
   "main": "root.js",
   "scripts": {
     "dev": "tsc-watch --onSuccess \"node dist/root.js\"",
+    "worker": "node dist/queue/worker.js",
+    "scheduler": "node dist/queue/scheduler.js",
     "start": "node dist/root.js",
     "build": "tsc -p .",
-    "docker-up": "docker compose up",
-    "docker-down": "docker compose down"
+    "docker-up": "docker compose up -d",
+    "docker-down": "docker compose down",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
   },
   "keywords": [],
   "author": "",
@@ -16,11 +21,17 @@
   "packageManager": "pnpm@10.11.0",
   "dependencies": {
     "@types/express": "^5.0.6",
+    "bullmq": "^5.73.0",
     "dotenv": "^17.4.0",
     "drizzle-orm": "^0.45.2",
     "express": "^5.2.1",
     "pg": "^8.20.0",
     "tsc-watch": "^7.2.0",
     "typescript": "^6.0.2"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.20.0",
+    "drizzle-kit": "^0.31.10",
+    "tsx": "^4.21.0"
   }
 }
