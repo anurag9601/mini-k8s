@@ -5,6 +5,8 @@
   "main": "root.js",
   "scripts": {
     "dev": "tsc-watch --onSuccess \"node dist/root.js\"",
+    "worker": "node dist/queue/worker.js",
+    "scheduler": "node dist/queue/scheduler.js",
     "start": "node dist/root.js",
     "build": "tsc -p .",
     "docker-up": "docker compose up -d",
